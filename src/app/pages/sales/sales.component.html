@@ -1,0 +1,50 @@
+<!-- <div class="col-md-12">
+  <div class="card">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-6">
+          <input class="form-control" type="file" #fileInput />
+      </div>
+      <div class="col-md-6">
+          <button class="btn btn-primary" (click)="uploadFile()">Upload</button>
+      </div>
+  </div>
+  <div>
+      <h4 class="alert-success">{{message}}</h4>
+  </div>
+  </div>
+  </div>
+  </div> -->
+
+  <app-popup
+[message]="message"
+*ngIf="message"
+(close)="OnHandlePopup()"
+></app-popup>
+
+  <app-submit-spinner *ngIf="submitSpspinner"></app-submit-spinner>
+
+  <div *ngIf="!submitSpspinner">
+  <form [formGroup]="fileUploadForm" (ngSubmit)="onFormSubmit()">
+    <div class="row">
+        <div class="col-sm-12">
+            <div>
+                <h6 class="head-title margin-top-8"><span>SALES UPLOAD</span></h6>
+            </div>
+        </div>
+
+        <div class="col-sm-6 text-center">
+
+            <div class="custom-file">
+                <input type="file" class="custom-file-input" id="customFile" name="myfile"
+                    (change)="onFileSelect($event)" #UploadFileInput>
+                <label class="custom-file-label" for="customFile">{{fileInputLabel || 'Choose File'}}</label>
+            </div>
+
+        </div>
+        <div class="col-sm-6 text-center">
+            <button class="btn btn-primary" type="submit">Upload</button>
+        </div>
+    </div>
+</form>
+</div>

@@ -1,0 +1,55 @@
+<app-loading-spinner *ngIf="loadingSpinner"></app-loading-spinner>
+
+
+<div class="row">
+    <div class="col-md-12">
+      <div class="card">
+        <div class="card-header">
+          <h4 class="card-title"> Sales Reports</h4>
+
+          <div class="card-body" >
+            <div class="table-responsive">
+              <table class="table">
+                <div class="center">
+                </div>
+                <thead class=" text-primary">
+                  <th>
+                    Date
+                  </th>
+                  <th>
+                    Item Name
+                  </th>
+                  <th>
+                    Unit
+                  </th>
+                  <th>
+                    Unit Cost
+                  </th>
+                  <th>
+                    Address
+                  </th>
+
+                </thead>
+                <tbody *ngFor="let sale of sales">
+                  <tr>
+
+                    <td> {{sale?.Date}} </td>
+                    <td> {{sale?.Item}} </td>
+                    <td> {{sale?.Unit}} </td>
+                    <td> {{sale?.UnitCost}} </td>
+                    <td> {{sale?.Address}} </td>
+
+                   </tr>
+                </tbody>
+
+              </table>
+              <!-- Pagination -->
+              <div class="text-center">
+                <pagination-controls (pageChange)="pageChanged($event)"></pagination-controls>
+              </div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>

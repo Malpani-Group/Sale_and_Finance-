@@ -1,0 +1,58 @@
+
+<div class="sidebar-wrapper">
+  <div class="logo">
+        <a routerLink="/" class="simple-text logo-normal">
+      <!-- <img src="assets/Natraj.png" height="50" width="200"> -->
+      <h3>Sales and
+        <br> Finance</h3>
+    </a>
+  </div>
+    <ul class="nav">
+       <!-- <li *ngFor="let menuItem of menuItems" routerLinkActive="active" class="{{menuItem.class}}">
+            <a [routerLink]="[menuItem.path]">
+                <i class=" {{menuItem.icon}}"></i>
+                <p>{{menuItem.title}}</p>
+            </a>
+        </li> -->
+
+        <li routerLinkActive="active" class="" >
+          <a routerLink="/dashboard">
+              <i class="fa fa-university"></i>
+              <p>Dashboard</p>
+          </a>
+      </li>
+
+
+
+        <li routerLinkActive="active" class="" *ngIf="userservice.isLoggedIn == true">
+          <a routerLink="/sales">
+              <i class="fa fa-book"></i>
+              <p>Sales</p>
+          </a>
+      </li>
+
+      <li routerLinkActive="active" class="" *ngIf="userservice.isLoggedIn == true">
+        <a routerLink="/finance">
+            <i class="fa fa-book"></i>
+            <p>Finance</p>
+        </a>
+    </li>
+
+    <li routerLinkActive="active" class="" *ngIf="userservice.isLoggedIn == true">
+      <a routerLink="/sales-table">
+          <i class="fa fa-bar-chart"></i>
+          <p>Sales Report</p>
+      </a>
+  </li>
+
+  <li routerLinkActive="active" class="" *ngIf="userservice.isLoggedIn == true">
+    <a routerLink="/finances-table">
+        <i class="fa fa-bar-chart"></i>
+        <p>Finance Report</p>
+    </a>
+</li>
+
+
+
+    </ul>
+</div>

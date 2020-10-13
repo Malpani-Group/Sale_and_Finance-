@@ -1,0 +1,34 @@
+<div class="alert alert-danger" *ngIf="loggingError">
+  <button type="button" class="close" data-dismiss="alert" aria-hidden="true">
+    ×</button>
+  <span class="glyphicon glyphicon-hand-right"></span> <strong>Incorrect Password OR Check your network.</strong>
+  <hr class="message-inner-separator">
+</div>
+
+<app-submit-spinner *ngIf="submitSpspinner"></app-submit-spinner>
+
+<div class="wrapper fadeInDown" *ngIf="!submitSpspinner">
+  <div id="formContent">
+    <!-- Tabs Titles -->
+
+    <!-- Icon -->
+    <div class="fadeIn first">
+      <h3>Sales and Finance </h3>
+    </div>
+    <br>
+
+    <!-- Login Form -->
+    <form #loginForm="ngForm" (ngSubmit)="onSubmit(Username.value,Password.value)">
+      <input type="text" id="login" class="fadeIn second" #Username ngModel name="Username" placeholder="Username">
+      <input type="password" id="password" class="fadeIn third" ngModel #Password name="Password" placeholder="password">
+      <input type="submit" class="fadeIn fourth" value="Log In">
+    </form>
+
+    <!-- Remind Passowrd -->
+    <div id="formFooter">
+    <p></p>
+    </div>
+
+  </div>
+</div>
+
